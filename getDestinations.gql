@@ -1,0 +1,23 @@
+query getWorkspaceOverviewData($workspaceSlug: Slug!) {
+	workspace(slug: $workspaceSlug) {
+     id
+     name
+		 destinations{
+			... on Integration{
+				name
+				metadata{
+				 ... on IntegrationMetadata{
+						slug
+					 }
+				}
+				id
+#				connectedSources{
+#					name
+#					id
+#				}
+				settings
+			}
+			
+		}
+	}
+}

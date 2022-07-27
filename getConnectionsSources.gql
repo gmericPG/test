@@ -1,0 +1,47 @@
+query getWorkspaceOverviewData($workspaceSlug: Slug!) {
+	workspace(slug: $workspaceSlug) {
+     id
+		 slug	
+		 sources{
+			name
+			slug
+			id
+			metadata{
+				logos{
+					default
+					mark
+				}
+				slug
+			}
+			writeKeys
+			connectedDestinations{
+				... on Integration{
+					name
+					id
+					enabled
+					settings
+					metadata{
+						id
+						slug
+						logos{
+							default
+							mark
+						}
+					}
+				}
+			 ... on Warehouse{
+				name
+				enabled
+				metadata{
+					id
+					slug
+					logos{
+						mark
+						default
+					}
+				}
+			}
+		}
+	}
+ }
+}

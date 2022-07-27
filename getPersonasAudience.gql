@@ -1,0 +1,126 @@
+query getPersonasAudience($workspaceSlug: Slug!, $spaceId: String!) {
+	workspace(slug: $workspaceSlug) {
+		id
+		space(id: $spaceId) {
+			name
+			slug
+			id
+			sources {
+				name
+				slug
+				id
+				metadata {
+					slug
+					logos{
+						default
+						mark
+					}
+				}
+				counts(days: 30) {
+					allowed
+					denied
+				}
+			}
+			audienceCount
+			audiences {
+				data {
+					enabled
+					status
+					statusInfo {
+						status
+						lastCalculated
+					}
+					name
+					# 					description
+					# 					key
+					id
+					size
+					idBreakdown {
+						idType
+						profiles
+						# 						values
+					}
+					destinations {
+						name
+						metadata {
+							... on IntegrationMetadata {
+								logos {
+									default
+									mark
+								}
+								slug
+							}
+							... on WarehouseMetadata {
+								logos {
+									default
+									mark
+								}
+								slug
+							}
+							... on SourceMetadata {
+								logos {
+									default
+									mark
+								}
+								slug
+							}
+							... on BiToolMetadata {
+								logo
+								slug
+							}
+							
+						}
+						
+						id
+						type
+						enabled
+					}
+				}
+			}
+			computedTraitCount
+			computedTraits {
+				data {
+					name
+					enabled
+					status
+					destinations {
+						name
+						destinationId
+						id
+						enabled
+						type
+						metadata {
+							... on IntegrationMetadata {
+								logos {
+									default
+									mark
+								}
+								slug
+							}
+							... on WarehouseMetadata {
+								logos {
+									default
+									mark
+								}
+								slug
+							}
+							... on SourceMetadata {
+								logos {
+									default
+									mark
+								}
+								slug
+							}
+							... on BiToolMetadata {
+								logo
+								slug
+							}
+							
+						}
+					}
+				}
+			}
+		}
+		__typename
+	}
+}

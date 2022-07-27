@@ -1,0 +1,61 @@
+node,Consumer API Events Microservice,2,microservice
+link,Offline Data,Consumer API Events Microservice
+node,(DE) - Offline Sources,3,http-api
+link,Consumer API Events Microservice,(DE) - Offline Sources
+link,Consumer API Events Microservice,DEU Pampers - Highly Restricted
+node,COT page,1,microservice
+node,COT Microservice,2,microservice
+node,COT Microservice ,5,microservice
+node,Janrain,6,microservice
+link,COT page,COT Microservice
+link,COT Microservice ,Janrain
+link,COT Microservice,(DE) COT
+link,COT Microservice,Google Cloud Pubsub (2)
+link,Google Cloud Pubsub (2),COT Microservice 
+node,Consumer Privacy Center (CPC),1,microservice
+node,CPC Microservice,2,microservice
+link,Consumer Privacy Center (CPC),CPC Microservice
+link,CPC Microservice,(DE) Profile Search & Edit
+node,Janrain ,1,microservice
+node,Janrain Microservice,2,microservice
+link,Janrain ,Janrain Microservice
+link,Janrain Microservice,(AT) Janrain
+node,Retention Rules Microservice,7,microservice
+node, Janrain ,8,microservice
+node, Adjust ,8,adjust
+node, Data Manager BigQuery ,8,bigquery
+link,Google Cloud Storage (BDU),Retention Rules Microservice
+link,Retention Rules Microservice, Janrain 
+link,Retention Rules Microservice, Adjust 
+link,Retention Rules Microservice, Data Manager BigQuery 
+link,Registration Microservice,(DE) - Offline Sources
+link,(DE) - Offline Sources,DEU Pampers - Highly Restricted
+link,(DE) - Offline Sources,Data Manager BigQuery
+link,(DE) - Offline Sources,Google Cloud Pubsub (2)
+link,(DE) - Offline Sources,Repeater
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
