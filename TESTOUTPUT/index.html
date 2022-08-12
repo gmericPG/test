@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <script src="https://d3js.org/d3.v5.js"></script>
+  <script src="dist/d3-sankey-circular.js"></script>
+  <script src="dist/icons2.js"></script>
+  <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+  <script src="data.js"></script>
+  <script src="dist/d3-path-arrows.js"></script>
+
+  <link href="https://fonts.googleapis.com/css?family=Roboto:500" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400" rel="stylesheet">
+
+  <title>CJS Demo Architecture</title>
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+
+    rect {
+      shape-rendering: crispEdges;
+    }
+
+    text {
+      font-size: 12px;
+      font-family: 'Roboto';
+      font-weight: 500;
+    }
+    .tick text {
+      font-size: 16px;
+      font-family: 'Roboto';
+      font-weight: 500;
+      font-style: italic;
+    }
+
+    .link {
+      fill: none;
+    }
+
+    #chart {
+      z-index: 999;
+      position: absolute;
+    }
+
+    #box {
+    /*width: 2px;
+    position: relative;
+    height: 100px;
+    border: 1px solid blue;*/
+    /*border-left: thick solid gray;*/
+    margin-left: 660px;
+    width: 3px;
+    background-color: silver;
+    height: 1600px;
+    float: left;
+    /*border: 2px ridge silver ;*/
+    border-radius: 2px;
+    z-index: -99999;
+  }
+
+  #date {
+    position: absolute;
+    z-index: -99999;
+  }
+  </style>
+</head>
+
+<body>
+  
+  <div id="chart"></div>
+
+  <script src="sankey.js"></script>
+  <p id="date"></p>
+  <div id="box"></div>
+</body>
+</html>
+
+<script>document.getElementById("date").innerHTML = 'Last updated on 11-08-2022';</script>
